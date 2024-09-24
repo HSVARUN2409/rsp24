@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <link rel="stylesheet" href="style.css">
+    </head>
+    <style>
+     
+      .container{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: aquamarine;
+      height: 40px;
+      line-height: 200px;
+      margin-bottom: 0%;
+      font-size: larger;
+    }
+    .entry{
+        font-size:x-large;
+        font-weight: bold;
+        color: chartreuse;
+    }
+    .menu{
+     margin-left: 37%;
+     font-size: 22px;
+     word-spacing: 12px;
+     font-weight: 700;
+    }
+    .menu a{
+      text-decoration: none;
+      
+    }
+    .title{
+      font-size:2.5vw;
+      word-spacing: 25px;
+      font-weight: 700;
+    }
+    label{
+        width: 200px;
+        display: inline-block;
+         }
+         .sub{
+            font-size: x-large;
+         }
+         .btn{
+            font-family: "Roboto",sans-serif;
+            font-size: large;
+            font-weight: bold;
+            background: #1e90ff;
+            width: 120px;
+            height: 60px;
+            position: absolute;
+            padding: 20px;
+            text-align: center;
+            text-decoration: none;
+            text-transform: uppercase;
+            color: #fff;
+            border-radius: 7px;
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            -webkit-transition-duration: 0.3s;
+            transition-duration: 0.3s;
+            -webkit-transition-property: box-shadow, transform;
+            transition-property: box-shadow, transform;
+
+         }
+         .btn:hover, .btn:focus, .btn:active{
+            box-shadow:  0 0 20px rgba(0, 0, 0, 0.5); 
+            -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+         }
+         input{
+          border-radius: 7px;
+          width: 120px;
+          height: 25px;
+          font-weight: 100;
+          font-size: large;
+          left:  5px;
+          background-color: rgb(14, 43, 48);
+          color: aqua;
+         }
+         body{
+          background-color: rgb(12, 7, 36);
+         }
+         h3{
+          color: moccasin;
+         }
+    </style>
+    <body>
+      <header class="container">
+        <div class="title">VTU-MCA 2022-Scheme</div>
+        <div class="menu" >
+          <a href="/home.html">Home</a>
+          <a href="/cgpa.html">CGPA</a>
+          <a href="/sgpa.html">SGPA</a>
+          <a href="/about.html">About</a>
+        </div>
+      </header>
+     
+        <br>
+        </br>
+        <br>
+      </br>  
+        <center>
+            <form onsubmit="s1()">
+                <div class="entry">
+                    <br>
+                <label>DBMS marks</label>
+                <input type="text" id="n1" name="n1"><br><br>
+                <label>Java marks</label>
+                <input type="text" id="n2" name="n2"><br><br>
+                <label>SE marks</label>
+                <input type="text" id="n3" name="n3"><br><br>
+                <label>Web Tech marks</label>
+                <input type="text"id="n4" name="n4"><br><br>
+                <label>Elective-1 marks</label>
+                <input type="text"id="n5" name="n5"><br><br>
+                <label>Elective-2 marks</label>
+                <input type="text"id="n6" name="n6"><br><br>
+                <label>DBMS-Lab marks</label>
+                <input type="text"id="n7" name="n7"><br><br>
+                <label>JAVA-Lab marks</label>
+                <input type="text"id="n8" name="n8"><br><br>
+                <button class="btn" type="submit" >Submit</button>
+                <h3 id="output"> </h3>
+            </div>
+            </form>
+
+          <br></br>
+        </center>
+        <script>
+          function s1(){
+            event.preventDefault()
+           let  n1 = document.getElementById("n1").value;
+           let  n2 = document.getElementById("n2").value;
+           let  n3 = document.getElementById("n3").value;
+           let  n4 = document.getElementById("n4").value;
+           let  n5 = document.getElementById("n5").value;
+           let  n6 = document.getElementById("n6").value;
+           let  n7 = document.getElementById("n7").value;
+           let  n8 = document.getElementById("n8").value;
+            let n;
+           function check(n)
+            {
+                if (n >= 90)
+                    return 10
+                else if ((n < 90) && (n >= 80))
+                    return 9;
+                else if ((n < 80) && (n >= 70))
+                    return 8;
+                else if ((n < 70) && (n >= 60))
+                    return 7;
+                else if ((n < 60) && (n >= 55))
+                    return 6;
+                else if ((n < 55) && (n >= 50))
+                    return 5;
+                else
+                    return 0;
+            }
+
+
+            let g1 = check(n1)
+            let g2 = check(n2)
+            let g3 = check(n3)
+            let g4 = check(n4)
+            let g5 = check(n5)
+            let g6 = check(n6)
+            let g7 = check(n7)
+            let g8 = check(n8)
+
+            let c1 = 3
+            let c2 = 3
+            let c3 = 4
+            let c4 = 4
+            let c5 = 3
+            let c6 = 3
+            let c7 = 1.5
+            let c8 = 1.5
+
+
+            let gpa = ((c1 * g1) + (c2 * g2) + (c3 * g3) + (c4 * g4) + (c5 * g5) + (c6 * g6) + (c7 * g7) + (c8 * g8))/23
+            let gpa2 = parseFloat(gpa).toFixed(2)
+            document.getElementById("output").innerHTML = "<br/><br/>"+"SGPA is : "+ gpa2;
+                      }
+            
+        </script>
+    </body>
+</html>

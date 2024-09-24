@@ -1,0 +1,29 @@
+
+header{
+    position: fixed;
+    top : 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    background-color: red;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+}
+
+
+
+
+.myDiv{
+    border : 5px outset red;
+    background-color: rgb(167, 151, 0);
+    font-size: 320%;
+    text-align: center;
+}
+.marks{
+    
+    text-align: center;
+    display: inline-block;
+    
+}

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <link rel="stylesheet" href="style.css">
+    </head>
+    <style>
+     
+      .container{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: aquamarine;
+      height: 25px;
+      line-height: 200px;
+      margin-bottom: 0%;
+    }
+    .entry{
+        font-size:x-large;
+        font-weight: bold;
+        color: chartreuse;
+    }
+    .menu{
+     margin-left: 37%;
+     font-size: 22px;
+     word-spacing: 12px;
+     font-weight: 700;
+    }
+    .menu a{
+      text-decoration: none;
+      
+    }
+    .title{
+      font-size:2.5vw;
+      word-spacing: 25px;
+      font-weight: 700;
+    }
+    label{
+        width: 500px;
+        display: inline-block;
+         }
+         .sub{
+            font-size: x-large;
+         }
+         .btn{
+            font-family: "Roboto",sans-serif;
+            font-size: large;
+            font-weight: bold;
+            background: #1e90ff;
+            width: 120px;
+            height: 15px;
+            position: absolute;
+            padding: 20px;
+            text-align: center;
+            text-decoration: none;
+            text-transform: uppercase;
+            color: #fff;
+            border-radius: 7px;
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            -webkit-transition-duration: 0.3s;
+            transition-duration: 0.3s;
+            -webkit-transition-property: box-shadow, transform;
+            transition-property: box-shadow, transform;
+
+         }
+         .btn:hover, .btn:focus, .btn:active{
+            box-shadow:  0 0 20px rgba(0, 0, 0, 0.5); 
+            -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+         }
+         input{
+          border-radius: 7px;
+          width: 120px;
+          height: 25px;
+          font-weight: 100;
+          font-size: large;
+          left:  5px;
+          background-color: rgb(14, 43, 48);
+          color: aqua;
+         }
+         body{
+          background-color: rgb(12, 7, 36);
+         }
+         h3{
+          color: moccasin;
+          text-align: center;
+         }
+    </style>
+    <body>
+      <header class="container">
+        <div class="title">VTU-MCA 2022-Scheme</div>
+        <div class="menu" >
+          <a href="/home.html">Home</a>
+          <a href="/cgpa.html">CGPA</a>
+          <a href="/sgpa.html">SGPA</a>
+          <a href="/about.html">About</a>
+        </div>
+      </header>
+     
+        <br>
+        </br>
+        <br>
+      </br>  
+        <center>
+            <form onsubmit="s3()">
+                <div class="entry">
+                    
+                <label>Data Analytics marks</label>
+                <input type="text" id="o1" name="o1"><br><br>
+                <label>IOT marks</label>
+                <input type="text" id="o2" name="o2"><br><br>
+                <label>Professional Elective-3 marks</label>
+                <input type="text" id="o3" name="o3"><br><br>
+                <label>Open Elective-1 marks</label>
+                <input type="text" id="o4" name="o4"><br><br>
+                <label>Project Work Phase-1 marks</label>
+                <input type="text" id="o5" name="o5"><br><br>
+                <label>DA-Lab marks</label>
+                <input type="text" id="o6" name="o6"><br><br>
+                <label>IOT-Lab marks</label>
+                <input type="text" id="o7" name="o7"><br><br>
+                <label>Societal Project marks</label>
+                <input type="text" id="o8" name="o8"><br><br>
+                <label>Internship marks</label>
+                <input type="text" id="o9" name="o9"><br><br>
+                <button class="btn" type="submit" >Submit</button>
+                <h3 id="output"> </h3>
+            </div>
+            </form>
+
+          <br></br>
+        </center>
+        <script>
+          function s3(){
+            event.preventDefault()        
+           let  o1 = document.getElementById("o1").value;
+           let  o2 = document.getElementById("o2").value;
+           let  o3 = document.getElementById("o3").value;
+           let  o4 = document.getElementById("o4").value;
+           let  o5 = document.getElementById("o5").value;
+           let  o6 = document.getElementById("o6").value;
+           let  o7 = document.getElementById("o7").value;
+           let  o8 = document.getElementById("o8").value;
+           let  o9 = document.getElementById("o9").value;
+
+            let x;
+            function check(x)
+{
+    if (x >= 90)
+        return 10
+    else if ((x < 90) && (x >= 80))
+        return 9;
+    else if ((x < 80) && (x >= 70))
+        return 8;
+    else if ((x < 70) && (x >= 60))
+        return 7;
+    else if ((x < 60) && (x >= 55))
+        return 6;
+    else if ((x < 55) && (x >= 50))
+        return 5;
+    else
+        return 0;
+}  
+
+
+let g1 = check(o1)
+let g2 = check(o2)
+let g3 = check(o3)
+let g4 = check(o4)
+let g5 = check(o5)
+let g6 = check(o6)
+let g7 = check(o7)
+let g8 = check(o8)
+let g9 = check(o9)
+
+let c1 = 3
+let c2 = 3
+let c3 = 3
+let c4 = 3
+let c5 = 2
+let c6 = 2
+let c7 = 2
+let c8 = 2
+let c9 = 6
+
+
+            let gpa = ((c1 * g1) + (c2 * g2) + (c3 * g3) + (c4 * g4) + (c5 * g5) + (c6 * g6) + (c7 * g7) + (c8 * g8))/26
+            let gpa2 = parseFloat(gpa).toFixed(2)
+            document.getElementById("output").innerHTML = "<br/>"+"SGPA is : "+ gpa2;
+                      }
+ 
+            
+        </script>
+        </body>
+    </body>
+</html>

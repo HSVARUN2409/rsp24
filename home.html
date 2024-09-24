@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      margin: 0%;
+      padding: 0%;
+      background-color: rgb(12, 7, 36);
+
+    }
+    .container{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: aquamarine;
+      height: 60px;
+      line-height: 200px;
+    }
+    .menu{
+     margin-left: 37%;
+     font-size: 22px;
+     word-spacing: 12px;
+     font-weight: 700;
+    }
+    .title{
+      font-size:2.5vw;
+      word-spacing: 25px;
+      font-weight: 700;
+    }
+
+    .content{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      line-height: 200px;
+      text-align: center;   
+      font-size:xx-large;
+      color: bisque;
+    }
+    /* .cgpa{
+      border: 2px solid rgb(133, 189, 49);
+      width: 20%;
+      height: 15vw;
+      display: table-cell;
+      margin-top: 30%;
+      margin-top: 8%;
+      border-radius: 10px;
+      cursor: pointer;
+    } */
+    .content a{
+      border: 3px solid greenyellow;
+      font-size: x-larger;
+      width: 20%;
+      height: 15vw;
+      margin-left: 20px;
+      margin-top: 8%;
+      cursor: pointer;
+      border-radius: 10px;
+      color: bisque;
+
+    }
+    a{
+      text-decoration: none;
+    }
+
+  </style>
+</head>
+<body >
+  <header class="container">
+    <div class="title">VTU-MCA 2022-Scheme</div>
+    <div class="menu" >
+      <a href="/home.html">Home</a>
+          <a href="/cgpa.html">CGPA</a>
+          <a href="/sgpa.html">SGPA</a>
+          <a href="/about.html">About</a>
+    </div>
+  </header>
+
+  <!-- <section>
+    <div class="content">
+    <div class="cgpa"><a href="/cgpa.html">CGPA</a></div>
+    <div class="sgpa"><a href="/sgpa.html">SGPA</a></div>
+    </div>
+  </section> -->
+  <section>
+    <div class="content">
+
+      <a  href="/cgpa.html"> <div class="cgpa" >CGPA</div> </a>
+      <a  href="/sgpa.html"><div class="sgpa" >SGPA</div></a>
+    </div>
+  </section>
+
+</body>
+</html>

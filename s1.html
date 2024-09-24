@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <link rel="stylesheet" href="style.css">
+    </head>
+    <style>
+     
+      .container{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: aquamarine;
+      height: 50px;
+      line-height: 200px;
+      margin-bottom: 0%;
+      font-size: larger;
+    }
+    .entry{
+        font-size:x-large;
+        font-weight: bold;
+        color: chartreuse;
+    }
+    .menu{
+     margin-left: 37%;
+     font-size: 22px;
+     word-spacing: 12px;
+     font-weight: 700;
+    }
+    .menu a{
+      text-decoration: none;
+      
+    }
+    .title{
+      font-size:2.5vw;
+      word-spacing: 25px;
+      font-weight: 700;
+    }
+    label{
+        width: 200px;
+        display: inline-block;
+         }
+         .sub{
+            font-size: x-large;
+         }
+         .btn{
+            font-family: "Roboto",sans-serif;
+            font-size: large;
+            font-weight: bold;
+            background: #1e90ff;
+            width: 120px;
+            height: 29px;
+            position: absolute;
+            padding: 20px;
+            text-align: center;
+            text-decoration: none;
+            text-transform: uppercase;
+            color: #fff;
+            border-radius: 7px;
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(247, 198, 198, 0.1);
+            -webkit-transition-duration: 0.3s;
+            transition-duration: 0.3s;
+            -webkit-transition-property: box-shadow, transform;
+            transition-property: box-shadow, transform;
+
+         }
+         .btn:hover, .btn:focus, .btn:active{
+            box-shadow:  0 0 20px rgba(247, 198, 198, 0.1); 
+            -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+         }
+         input{
+          border-radius: 7px;
+          width: 120px;
+          height: 25px;
+          font-weight: 100;
+          font-size: large;
+          left:  5px;
+          background-color: rgb(14, 43, 48);
+          color: aqua;
+         }
+         body{
+          background-color: rgb(12, 7, 36);
+         }
+         h3{
+          color: moccasin;
+         }
+
+
+         #cgpa_form{
+          display: block;
+         }
+         #cgpa_template{
+          display: none;
+         }
+         table, th, tr,td {
+          border:1px solid white;
+          border-collapse: collapse;
+          color: #fff;
+          margin-top: 90px;
+          text-align: center;
+          
+        }
+        .generate{
+          color: #fff;
+          position: relative;
+          top: 50px;
+          left: 60px;
+          border: 1px solid black;
+          width: 18%;
+          padding: 10px;
+          background-color: #1e90ff;
+          border-radius: 10px;
+          cursor: pointer;
+        }
+    </style>
+    <body>
+      <header class="container">
+        <div class="title">VTU-MCA  2022-Scheme</div>
+        <div class="menu" >
+          <a href="/home.html">Home</a>
+          <a href="/cgpa.html">CGPA</a>
+          <a href="/sgpa.html">SGPA</a>
+        </div>
+      </header>
+     
+        <br>
+        </br>
+        <br>
+      </br> 
+      <div id="cgpa_form"> 
+          <center>
+            <form onsubmit="s2()">
+                <div class="entry">
+                    <br>
+                <label>Maths marks</label>
+                <input type="text" id="m1" name="m1"><br><br>
+                <label>OS marks</label>
+                <input type="text"id="m2" name="m2"><br><br>
+                <label>DS marks</label>
+                <input type="text"id="m3" name="m3"><br><br>
+                <label>CN  marks</label>
+                <input type="text" id="m4"name="m4"><br><br>
+                <label>DAA marks</label>
+                <input type="text"id="m5" name="m5"><br><br>
+                <label>DS Lab marks</label>
+                <input type="text"id="m6" name="m6"><br><br>
+                <label>CN Lab marks</label>
+                <input type="text"id="m7" name="m7"><br><br>
+                <label>RM & IPR marks</label>
+                <input type="text"id="m8" name="m8"><br><br>
+                <button class="btn" type="submit" >Submit</button>
+                <h3 id="output"> </h3>
+            </div>
+            <h1 onclick="s3()" class="generate">Generate</h1>
+            </form>
+
+          <br></br>
+        </center>
+      </div>
+
+    <div id="cgpa_template">
+      <header class="container">
+        <div class="title">VTU-MCA 2022-Scheme</div>        
+      </header>
+      <table style="width:100%">
+        <tr>
+          <th>SEMESTER</th>
+          <th>MARKS</th> 
+          <th rowspan="9" id="totalsgpa" >SGPA</th>
+        
+        </tr>
+        <tr>
+          <td>Maths</td>
+          <td id="math"></td>
+        </tr>
+        <tr>
+          <td>OS</td>
+          <td id="os"></td>
+        </tr>
+        <tr>
+          <td>DS</td>
+          <td id="ds"></td>
+        </tr>
+        <tr>
+          <td>CN</td>
+          <td id="cn"></td>
+        </tr>
+        <tr>
+          <td>DAA</td>
+          <td id="daa"></td>
+        </tr>
+        <tr>
+          <td>DS-Lab</td>
+          <td id="dslab"></td>
+        </tr>
+        <tr>
+          <td>CN-Lab</td>
+          <td id="cnlab"></td>
+        </tr>
+        <tr>
+          <td>RM & IPR</td>
+          <td id="rm"></td>
+        </tr>
+      </table>
+      <center>
+      <button onclick="printT()" type="submit">Print</button>
+    </center>
+  </div>
+
+    <script src="/JS_file/sem1.js"></script>
+    </body>
+</html>
